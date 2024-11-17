@@ -5,12 +5,9 @@ from typing import Optional, Self, Type
 from pfmsoft.snippets.state_parser.abc import ParseContextABC, ResultHandlerABC
 from pfmsoft.snippets.state_parser.model import (
     ParseResult,
-    ParseResultTD,
-    ParsedIndexedString,
-    ParsedIndexedStringTD,
+    parse_result_serializer,
+    parsed_indexed_string_serializer,
 )
-
-from pfmsoft.snippets.simple_serializer import DataclassSerializer
 
 
 class CollectResults(ResultHandlerABC):
@@ -64,16 +61,11 @@ class SaveParsedIndexedStringsToFile(ResultHandlerABC):
         exc_value: Optional[BaseException],
         traceback: Optional[TracebackType],
     ) -> Optional[bool]:
-        serializer = DataclassSerializer[ParsedIndexedString, ParsedIndexedStringTD](
-            complex_factory=ParsedIndexedString.from_simple
-        )
+        serializer = parsed_indexed_string_serializer()
         serializer.save_iter_as_json(
             path_out=self.path_out,
             complex_obj=(x.parsed_indexed_string for x in self.results),
         )
-        # self.results.data().to_file(
-        #     path_out=self.path_out, overwrite=self.overwrite
-        # )
 
 
 class SaveResultsToFile(ResultHandlerABC):
@@ -99,9 +91,7 @@ class SaveResultsToFile(ResultHandlerABC):
         exc_value: Optional[BaseException],
         traceback: Optional[TracebackType],
     ) -> Optional[bool]:
-        serializer = DataclassSerializer[ParseResult, ParseResultTD](
-            complex_factory=ParseResult.from_simple
-        )
+        serializer = parse_result_serializer()
         serializer.save_iter_as_json(path_out=self.path_out, complex_obj=self.results)
 
     def handle_result(

@@ -3,6 +3,8 @@ from typing import Any, TypedDict
 
 from pfmsoft.snippets.indexed_string.model import IndexedString, IndexedStringTD
 
+from pfmsoft.snippets.simple_serializer import DataclassSerializer
+
 
 class ParsedIndexedStringTD(TypedDict):
     id: str
@@ -45,3 +47,17 @@ class ParseResult:
             ),
         )
         return result
+
+
+def parsed_indexed_string_serializer() -> (
+    DataclassSerializer[ParsedIndexedString, ParsedIndexedStringTD]
+):
+    return DataclassSerializer[ParsedIndexedString, ParsedIndexedStringTD](
+        complex_factory=ParsedIndexedString.from_simple
+    )
+
+
+def parse_result_serializer() -> DataclassSerializer[ParseResult, ParseResultTD]:
+    return DataclassSerializer[ParseResult, ParseResultTD](
+        complex_factory=ParseResult.from_simple
+    )
