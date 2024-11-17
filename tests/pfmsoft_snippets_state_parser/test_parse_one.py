@@ -5,10 +5,7 @@ import logging
 from pfmsoft.snippets.indexed_string.index_strings import index_strings
 from pfmsoft.snippets.state_parser import parsers
 from pfmsoft.snippets.state_parser.abc import ParserABC
-from pfmsoft.snippets.simple_serializer import DataclassSerializer
-
-
-from pfmsoft.snippets.state_parser.model import ParseResult, ParseResultTD
+from pfmsoft.snippets.state_parser.model import parse_result_serializer
 from pfmsoft.snippets.state_parser.result_handler import (
     SaveResultsToFile,
 )
@@ -17,6 +14,7 @@ from pfmsoft.snippets.state_parser import (
     ParseContext,
     ParseScheme,
 )
+
 
 logger = logging.getLogger(__name__)
 DATA = """
@@ -52,7 +50,9 @@ scheme: dict[str, Sequence[ParserABC]] = {
 
 
 def test_parse(test_output_dir: Path):
-    path_out = test_output_dir / "state_parser" / "parse_one" / "results.json"
+    path_out = (
+        test_output_dir / "state_parser" / "parse_one" / "test_parse" / "results.json"
+    )
     result_handler = SaveResultsToFile(path_out=path_out, overwrite=False)
     parse_scheme = ParseScheme(beginning_state="start", parser_lookup=scheme)
     parser = StateParser(parse_scheme=parse_scheme, result_handler=result_handler)
@@ -64,7 +64,13 @@ def test_parse(test_output_dir: Path):
 
 
 def test_serializer_parse_results(test_output_dir: Path):
-    path_out = test_output_dir / "state_parser" / "parse_one" / "results.json"
+    path_out = (
+        test_output_dir
+        / "state_parser"
+        / "parse_one"
+        / "test_serializer"
+        / "results.json"
+    )
     result_handler = SaveResultsToFile(path_out=path_out, overwrite=False)
     parse_scheme = ParseScheme(beginning_state="start", parser_lookup=scheme)
     parser = StateParser(parse_scheme=parse_scheme, result_handler=result_handler)
@@ -74,9 +80,7 @@ def test_serializer_parse_results(test_output_dir: Path):
     result = result_handler.results
     print(f"{len(result_handler.results)}")
     assert len(result_handler.results) == 11
-    serializer = DataclassSerializer[ParseResult, ParseResultTD](
-        complex_factory=ParseResult.from_simple
-    )
+    serializer = parse_result_serializer()
     loaded_results = serializer.load_from_json_list(path_in=path_out)
     path_out_loaded = (
         test_output_dir / "state_parser" / "parse_one" / "results_loaded.json"
