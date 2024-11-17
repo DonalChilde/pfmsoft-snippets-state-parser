@@ -17,7 +17,7 @@ class ParseResultTD(TypedDict):
     parsed_indexed_string: ParsedIndexedStringTD
 
 
-@dataclass
+@dataclass(slots=True)
 class ParsedIndexedString:
     id: str
     indexed_string: IndexedString
@@ -33,7 +33,7 @@ class ParsedIndexedString:
         return result
 
 
-@dataclass
+@dataclass(slots=True)
 class ParseResult:
     current_state: str
     parsed_indexed_string: ParsedIndexedString
