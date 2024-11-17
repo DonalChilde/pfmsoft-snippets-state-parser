@@ -26,6 +26,7 @@ dynamic = ["version", "description"]
 # "pfmsoft-snippets-indexed-string@git+https://github.com/donalchilde/pfmsoft-snippets-indexed-string@dev"
 dependencies = [
     "pfmsoft-snippets-indexed-string@git+https://github.com/donalchilde/pfmsoft-snippets-indexed-string@dev",
+    "pfmsoft-snippets-simple-serializer@git+https://github.com/donalchilde/pfmsoft-snippets-simple-serializer@dev",
 ]
 
 [project.scripts]
