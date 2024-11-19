@@ -1,4 +1,4 @@
-# Welcome to Pfmsoft Snippets State Parser's documentation
+# Welcome to Pfmsoft State Parser's documentation
 
 ```{toctree}
 ---

@@ -1,13 +1,13 @@
-"""Top-level package for pfmsoft_snippets_state_parser."""
+"""Top-level package for pfmsoft_state_parser."""
 
-from pfmsoft.snippets.state_parser.state_parser import (
+from pfmsoft.state_parser.state_parser import (
     StateParser,
     ParseContext,
     ParseScheme,
 )
-from pfmsoft.snippets.state_parser import parsers
-from pfmsoft.snippets.state_parser import result_handler
-from pfmsoft.snippets.state_parser import model
+from pfmsoft.state_parser import parsers
+from pfmsoft.state_parser import result_handler
+from pfmsoft.state_parser import model
 
 __author__ = "Chad Lowe"
 __email__ = "pfmsoft.dev@gmail.com"

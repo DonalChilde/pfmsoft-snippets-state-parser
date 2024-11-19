@@ -1,20 +1,20 @@
 import logging
 from typing import Iterable, Sequence
 
-from pfmsoft.snippets.indexed_string.model import IndexedString
-from pfmsoft.snippets.state_parser.abc import (
+from pfmsoft.indexed_string.model import IndexedString
+from pfmsoft.state_parser.abc import (
     ParseContextABC,
     ParseSchemeABC,
     ResultHandlerABC,
 )
-from pfmsoft.snippets.state_parser.model import ParseResult
-from pfmsoft.snippets.state_parser.parse_exception import (
+from pfmsoft.state_parser.model import ParseResult
+from pfmsoft.state_parser.parse_exception import (
     ParseAllFail,
     ParseException,
     ParseJobFail,
     SingleParserFail,
 )
-from pfmsoft.snippets.state_parser.parsers import ParserABC
+from pfmsoft.state_parser.parsers import ParserABC
 
 
 logger = logging.getLogger(__name__)

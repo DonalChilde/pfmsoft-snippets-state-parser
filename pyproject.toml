@@ -15,28 +15,27 @@ classifiers = [
 
 ]
 authors = [{ name = "Chad Lowe", email = "pfmsoft.dev@gmail.com" }]
-name = "pfmsoft.snippets.state-parser"
+name = "pfmsoft.state-parser"
 readme = "README.md"
 requires-python = ">=3.13"
 license = { file = "LICENSE" }
 dynamic = ["version", "description"]
 # https://chrisholdgraf.com/blog/2022/install-github-from-pyproject/
 # https://peps.python.org/pep-0508/#examples
-# "pfmsoft-snippets@git+https://github.com/donalchilde/pfmsoft-snippets@0.0.1"
-# "pfmsoft-snippets-indexed-string@git+https://github.com/donalchilde/pfmsoft-snippets-indexed-string@dev"
+# "pfmsoft-indexed-string@git+https://github.com/donalchilde/pfmsoft-indexed-string@dev"
 dependencies = [
-    "pfmsoft-snippets-indexed-string@git+https://github.com/donalchilde/pfmsoft-snippets-indexed-string@dev",
-    "pfmsoft-snippets-simple-serializer@git+https://github.com/donalchilde/pfmsoft-snippets-simple-serializer@dev",
+    "pfmsoft-indexed-string@git+https://github.com/donalchilde/pfmsoft-indexed-string@dev",
+    "pfmsoft-simple-serializer@git+https://github.com/donalchilde/pfmsoft-simple-serializer@dev",
 ]
 
 [project.scripts]
-pfmsoft-snippets-state-parser_typer = "pfmsoft_snippets_state_parser.cli.main_typer:app"
+pfmsoft-state-parser_typer = "pfmsoft_state_parser.cli.main_typer:app"
 
 [project.urls]
-Documentation = "https://github.com/DonalChilde/pfmsoft-snippets-state-parser#readme"
-# Documentation_rtd = "https://pfmsoft-snippets-state-parser.readthedocs.io"
-Issues = "https://github.com/DonalChilde/pfmsoft-snippets-state-parser/issues"
-Source = "https://github.com/DonalChilde/pfmsoft-snippets-state-parser"
+Documentation = "https://github.com/DonalChilde/pfmsoft-state-parser#readme"
+# Documentation_rtd = "https://pfmsoft-state-parser.readthedocs.io"
+Issues = "https://github.com/DonalChilde/pfmsoft-state-parser/issues"
+Source = "https://github.com/DonalChilde/pfmsoft-state-parser"
 
 
 [project.optional-dependencies]
@@ -88,7 +87,7 @@ parallel = true
 
 [tool.scriv]
 #version = "literal: pyproject.toml: project.version"
-version = "literal: src/pfmsoft_snippets_state_parser/__init__.py: __version__"
+version = "literal: src/pfmsoft_state_parser/__init__.py: __version__"
 format = "md"
 md_header_level = "2"
 entry_title_template = "file: changelog.d/templates/entry_title_template.md.j2"

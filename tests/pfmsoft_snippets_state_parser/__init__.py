@@ -1,1 +1,1 @@
-"""Test suite for the pfmsoft_snippets_state_parser package."""
+"""Test suite for the pfmsoft_state_parser package."""

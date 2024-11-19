@@ -2,14 +2,14 @@ from pathlib import Path
 from typing import Sequence
 import logging
 
-from pfmsoft.snippets.indexed_string.index_strings import index_strings
-from pfmsoft.snippets.state_parser import parsers
-from pfmsoft.snippets.state_parser.abc import ParserABC
-from pfmsoft.snippets.state_parser.model import parse_result_serializer
-from pfmsoft.snippets.state_parser.result_handler import (
+from pfmsoft.indexed_string.index_strings import index_strings
+from pfmsoft.state_parser import parsers
+from pfmsoft.state_parser.abc import ParserABC
+from pfmsoft.state_parser.model import parse_result_serializer
+from pfmsoft.state_parser.result_handler import (
     SaveResultsToFile,
 )
-from pfmsoft.snippets.state_parser import (
+from pfmsoft.state_parser import (
     StateParser,
     ParseContext,
     ParseScheme,

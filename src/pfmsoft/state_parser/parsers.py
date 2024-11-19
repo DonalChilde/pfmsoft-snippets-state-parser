@@ -1,6 +1,6 @@
-from pfmsoft.snippets.indexed_string.model import IndexedString
-from pfmsoft.snippets.state_parser.abc import ParseContextABC, ParserABC
-from pfmsoft.snippets.state_parser.model import (
+from pfmsoft.indexed_string.model import IndexedString
+from pfmsoft.state_parser.abc import ParseContextABC, ParserABC
+from pfmsoft.state_parser.model import (
     ParsedIndexedString,
     ParseResult,
 )

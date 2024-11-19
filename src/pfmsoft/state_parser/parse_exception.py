@@ -10,7 +10,7 @@
 ####################################################
 from typing import Sequence
 
-from pfmsoft.snippets.indexed_string.model import IndexedString
+from pfmsoft.indexed_string.model import IndexedString
 
 
 class ParseException(Exception):

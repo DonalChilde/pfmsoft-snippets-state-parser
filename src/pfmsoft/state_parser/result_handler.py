@@ -2,8 +2,8 @@ from pathlib import Path
 from types import TracebackType
 from typing import Optional, Self, Type
 
-from pfmsoft.snippets.state_parser.abc import ParseContextABC, ResultHandlerABC
-from pfmsoft.snippets.state_parser.model import (
+from pfmsoft.state_parser.abc import ParseContextABC, ResultHandlerABC
+from pfmsoft.state_parser.model import (
     ParseResult,
     parse_result_serializer,
     parsed_indexed_string_serializer,

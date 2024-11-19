@@ -4,7 +4,7 @@ from pathlib import Path
 
 import nox
 
-package = "pfmsoft_snippets_state_parser"
+package = "pfmsoft_state_parser"
 github_user = "DonalChilde"
 # python_versions = ["3.10", "3.9", "3.8", "3.7"]
 

@@ -1,9 +1,9 @@
 from dataclasses import dataclass, field
 from typing import Any, TypedDict
 
-from pfmsoft.snippets.indexed_string.model import IndexedString, IndexedStringTD
+from pfmsoft.indexed_string.model import IndexedString, IndexedStringTD
 
-from pfmsoft.snippets.simple_serializer import DataclassSerializer
+from pfmsoft.simple_serializer import DataclassSerializer
 
 
 class ParsedIndexedStringTD(TypedDict):

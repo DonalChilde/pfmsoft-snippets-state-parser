@@ -2,10 +2,10 @@ from abc import ABC
 from types import TracebackType
 from typing import Any, Optional, Self, Sequence, Type
 
-from pfmsoft.snippets.indexed_string.model import IndexedString
+from pfmsoft.indexed_string.model import IndexedString
 
-from pfmsoft.snippets.state_parser.model import ParseResult
-from pfmsoft.snippets.state_parser.parse_exception import SingleParserFail
+from pfmsoft.state_parser.model import ParseResult
+from pfmsoft.state_parser.parse_exception import SingleParserFail
 
 
 class ParseContextABC(ABC):
